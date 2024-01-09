@@ -19,7 +19,7 @@ export const Navbar = () => {
   };
   return (
     <div className="max-w-[1640px] mx-auto flex justify-between items-center">
-      <div className="flex flex-row items-center gap-3 my-2">
+      <div className="flex flex-row items-center my-2 p-4">
         <div className="cursor-pointer">
           <AiOutlineMenu onClick={() => setActiveNav(!activeNav)} size={30} />
         </div>
