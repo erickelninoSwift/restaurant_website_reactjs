@@ -7,15 +7,21 @@ import {
 } from "react-icons/ai";
 import { BsFillCartFill, BsFillSaveFill } from "react-icons/bs";
 import { TbTruckDelivery } from "react-icons/tb";
-import { FaUserFriends, FaWallet } from "react-icons/fa";
+import { FaSlack, FaUserFriends, FaWallet } from "react-icons/fa";
 import { MdFavorite, MdHelp } from "react-icons/md";
 
 export const Navbar = () => {
+  const [activeNav, setActiveNav] = useState(false);
+
+  const handleSideMenu = () => {
+    setActiveNav(() => !activeNav);
+    console.log(activeNav);
+  };
   return (
     <div className="max-w-[1640px] mx-auto flex justify-between items-center">
       <div className="flex flex-row items-center gap-3 my-2">
         <div className="cursor-pointer">
-          <AiOutlineMenu size={30} />
+          <AiOutlineMenu onClick={() => setActiveNav(!activeNav)} size={30} />
         </div>
         <h1 className="text-2xl sm:text-3xl lg:text-4xl px-2">
           Best <span className="font-bold">Eats</span>
@@ -38,8 +44,19 @@ export const Navbar = () => {
         <BsFillCartFill size={20} className="mr-2" />
       </button>
       {/* {Mobile menu} */}
-      <div className="bg-black/80 fixed w-full h-screen z-5 top-0 left-0"></div>
-      <div className="fixed top-0 left-0 w-[300px] h-screen bg-white z-10 duration-300 ">
+      <div
+        className={
+          activeNav ? `bg-black/80 fixed w-full h-screen z-5 top-0 left-0` : ""
+        }
+      ></div>
+      <div
+        className={
+          activeNav
+            ? `fixed top-0 left-0 w-[300px] h-screen bg-white z-10 duration-300 `
+            : `fixed top-0 left-[-100%] w-[300px] h-screen bg-white z-10 duration-300 `
+        }
+        onClick={() => handleSideMenu()}
+      >
         <AiOutlineClose
           size={30}
           className="absolute right-4 top-4 cursor-pointer"
