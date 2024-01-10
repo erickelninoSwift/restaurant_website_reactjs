@@ -7,7 +7,7 @@ import {
 } from "react-icons/ai";
 import { BsFillCartFill, BsFillSaveFill } from "react-icons/bs";
 import { TbTruckDelivery } from "react-icons/tb";
-import { FaSlack, FaUserFriends, FaWallet } from "react-icons/fa";
+import { FaUserFriends, FaWallet } from "react-icons/fa";
 import { MdFavorite, MdHelp } from "react-icons/md";
 
 export const Navbar = () => {
@@ -18,8 +18,11 @@ export const Navbar = () => {
     console.log(activeNav);
   };
   return (
-    <div className="max-w-[1640px] mx-auto flex justify-between items-center">
-      <div className="flex flex-row items-center my-2 p-4">
+    <div
+      className="max-w-[1640px] mx-auto flex justify-around
+     items-center"
+    >
+      <div className="flex flex-row justify-between items-center my-2 p-4">
         <div className="cursor-pointer">
           <AiOutlineMenu onClick={() => setActiveNav(!activeNav)} size={30} />
         </div>
@@ -41,7 +44,7 @@ export const Navbar = () => {
       </div>
       {/* {card button} */}
       <button className="bg-black text-white hidden md:flex items-center py-2 rounded-full">
-        <BsFillCartFill size={20} className="mr-2" />
+        <BsFillCartFill size={20} className="mr-1" />
       </button>
       {/* {Mobile menu} */}
       <div
