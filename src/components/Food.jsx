@@ -57,15 +57,24 @@ function Food() {
         </div>
       </div>
       {/* {Grid } */}
-      <div className="mx-w-[1640px] mx-auto p-4 py-10 grid grid-cols-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
         {Foods.map((data, index) => {
           return (
-            <div className="p-4" key={index}>
-              <img src={data.image} alt={data.name} />
-              <div>
-                <p>{data.name}</p>
+            <div
+              className="border shadow-lg hover:scale-105 rounded-lg duration-400"
+              key={index}
+            >
+              <img
+                src={data.image}
+                alt={data.name}
+                className="w-full h-[200px] object-cover rounded-t-lg"
+              />
+              <div className="flex justify-between px-2 py-4">
+                <p className="font-bold">{data.name}</p>
                 <p>
-                  R<span>{data.price}</span>
+                  <span className="bg-orange-500 text-white rounded-xl p-[5px]">
+                    {data.price}
+                  </span>
                 </p>
               </div>
             </div>
