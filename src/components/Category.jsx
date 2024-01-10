@@ -2,7 +2,7 @@ import React from "react";
 import { categories } from "../data/data";
 function Category() {
   return (
-    <div className="max-w-[1640px] px-4 py-12 mx-auto">
+    <div className="max-w-[1640px] px-4 py-12 m-auto">
       <h1 className="text-orange-600 font-bold text-2xl text-center">
         Top rated Menu Categories
       </h1>
